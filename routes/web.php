@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// shows users depending on class called in UserController.
+// I've added two possible methods in the UserController to filter results in such a way the filter parameters are easily scaleable.
+
+Route::get('/', [UserController::class, 'filterMethodOne']);
