@@ -11,7 +11,7 @@ use Closure;
 
 class NameFilter
 {
-    public function handle($query, Closure $next): Builder
+    public function handle(Builder $query, Closure $next): Builder
     {
         if(request()->has('name')){
             $query->where('name', 'LIKE', '%'.request('name').'%');

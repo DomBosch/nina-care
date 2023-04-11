@@ -12,7 +12,7 @@ use Closure;
 
 class SortFilter
 {
-    public function handle($query, Closure $next): Builder
+    public function handle(Builder $query, Closure $next): Builder
     {
         if (request()->has('sort')) {
             return $next($query)->orderBy(request('sort'), $request('order') ?? 'desc');

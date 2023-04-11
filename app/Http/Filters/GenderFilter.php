@@ -7,7 +7,7 @@ use Closure;
 
 class GenderFilter
 {
-    public function handle($query, Closure $next): Builder
+    public function handle(Builder $query, Closure $next): Builder
     {
         if(request()->has('gender')){
             $query->where('gender', request('gender'));
