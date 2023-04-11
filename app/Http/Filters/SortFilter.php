@@ -2,6 +2,7 @@
 
 namespace App\Http\Filters;
 
+use Illuminate\Database\Eloquent\Builder;
 use Closure;
 
 /**
@@ -11,7 +12,7 @@ use Closure;
 
 class SortFilter
 {
-    public function handle($query, Closure $next)
+    public function handle($query, Closure $next): Builder
     {
         if (request()->has('sort')) {
             return $next($query)->orderBy(request('sort'), $request('order') ?? 'desc');

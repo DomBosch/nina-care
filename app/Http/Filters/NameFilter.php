@@ -2,6 +2,7 @@
 
 namespace App\Http\Filters;
 
+use Illuminate\Database\Eloquent\Builder;
 use Closure;
 
 /**
@@ -10,7 +11,7 @@ use Closure;
 
 class NameFilter
 {
-    public function handle($query, Closure $next)
+    public function handle($query, Closure $next): Builder
     {
         if(request()->has('name')){
             $query->where('name', 'LIKE', '%'.request('name').'%');

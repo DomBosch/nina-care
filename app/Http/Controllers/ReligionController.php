@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Religion;
 use Illuminate\Http\Request;
 
+// Controller exists for future use. (CRUD)
+
 class ReligionController extends Controller
 {
     /**
